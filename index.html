@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .card--img{
+        transition: all 1s ease-in;
+      }
+      .card--img:hover{
+        transform: rotate3d(0, 1, 0, 3rad);
+        
+      }
+      .card--hover{
+        transition: all 0.3s ease-out;
+        cursor: pointer;
+      }
+      .card--hover:hover{
+        transform: scale(0.97);
+      }
+      .cart--hover{
+        transition: all 0.3s ease-out;
+        cursor: pointer;
+      }
+      .cart--hover:hover{
+        transform: scale(1.05);
+        opacity: 0.5;
+      }
+    </style>
+</head>
+<body>
+  <!-- container -->
+    <div class="d-flex flex-column">
+
+
+      <!-- First Navabar -->
+        <nav class="navbar bg-black container-fluid">
+            <div class="container-fluid">
+              <a class="navbar-brand text-light" ><span class="text-success">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-android2" viewBox="0 0 16 16">
+                    <path d="m10.213 1.471.691-1.26c.046-.083.03-.147-.048-.192-.085-.038-.15-.019-.195.058l-.7 1.27A4.832 4.832 0 0 0 8.005.941c-.688 0-1.34.135-1.956.404l-.7-1.27C5.303 0 5.239-.018 5.154.02c-.078.046-.094.11-.049.193l.691 1.259a4.25 4.25 0 0 0-1.673 1.476A3.697 3.697 0 0 0 3.5 5.02h9c0-.75-.208-1.44-.623-2.072a4.266 4.266 0 0 0-1.664-1.476ZM6.22 3.303a.367.367 0 0 1-.267.11.35.35 0 0 1-.263-.11.366.366 0 0 1-.107-.264.37.37 0 0 1 .107-.265.351.351 0 0 1 .263-.11c.103 0 .193.037.267.11a.36.36 0 0 1 .112.265.36.36 0 0 1-.112.264m4.101 0a.351.351 0 0 1-.262.11.366.366 0 0 1-.268-.11.358.358 0 0 1-.112-.264c0-.103.037-.191.112-.265a.367.367 0 0 1 .268-.11c.104 0 .19.037.262.11a.367.367 0 0 1 .107.265c0 .102-.035.19-.107.264M3.5 11.77c0 .294.104.544.311.75.208.204.46.307.76.307h.758l.01 2.182c0 .276.097.51.292.703a.961.961 0 0 0 .7.288.973.973 0 0 0 .71-.288.95.95 0 0 0 .292-.703v-2.182h1.343v2.182c0 .276.097.51.292.703a.972.972 0 0 0 .71.288.973.973 0 0 0 .71-.288.95.95 0 0 0 .292-.703v-2.182h.76c.291 0 .54-.103.749-.308.207-.205.311-.455.311-.75V5.365h-9v6.404Zm10.495-6.587a.983.983 0 0 0-.702.278.91.91 0 0 0-.293.685v4.063c0 .271.098.501.293.69a.97.97 0 0 0 .702.284c.28 0 .517-.095.712-.284a.924.924 0 0 0 .293-.69V6.146a.91.91 0 0 0-.293-.685.995.995 0 0 0-.712-.278m-12.702.283a.985.985 0 0 1 .712-.283c.273 0 .507.094.702.283a.913.913 0 0 1 .293.68v4.063a.932.932 0 0 1-.288.69.97.97 0 0 1-.707.284.986.986 0 0 1-.712-.284.924.924 0 0 1-.293-.69V6.146c0-.264.098-.491.293-.68Z"/>
+                  </svg>
+              </span>web<span class="text-success">market</span></a>
+              <form class="d-flex" role="search">
+                <button class="btn btn-success" type="submit">Buy Now</button>
+              </form>
+            </div>
+          </nav>
+
+
+    <!-- Second Navbar -->
+    <nav class="navbar sticky-top bg-body-tertiary navbar-expand-lg pe-lg-5 ps-lg-5 ps-md-5 ps-md-5 pt-3 pb-3">
+        <div class="container-fluid">
+          <a class="navbar-brand text-black">
+            <span class="text-success"><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 33 33"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M16.3333 0.166748C7.50028 0.166748 0.333252 7.33378 0.333252 16.1667C0.333252 24.9997 7.50028 32.1667 16.3333 32.1667C25.1489 32.1667 32.3333 24.9997 32.3333 16.1667C32.3333 7.33378 25.1489 0.166748 16.3333 0.166748ZM26.9016 7.54202C28.8105 9.8674 29.9559 12.8348 29.9906 16.0452C29.5394 15.9585 25.0274 15.0387 20.4808 15.6114C20.3767 15.3858 20.2899 15.1428 20.1858 14.8999C19.9081 14.2405 19.5958 13.5637 19.2834 12.9216C24.3159 10.8739 26.6066 7.9238 26.9016 7.54202ZM16.3333 2.52684C19.804 2.52684 22.9797 3.82836 25.3919 5.96285C25.1489 6.30992 23.0838 9.06914 18.2248 10.8912C15.9862 6.77846 13.5047 3.41187 13.1229 2.89126C14.1467 2.64831 15.2227 2.52684 16.3333 2.52684ZM10.5199 3.811C10.8843 4.2969 13.3138 7.68085 15.5871 11.7068C9.20093 13.4075 3.56102 13.3728 2.95364 13.3728C3.83867 9.13855 6.70201 5.61577 10.5199 3.811ZM2.65863 16.1841C2.65863 16.0452 2.65863 15.9064 2.65863 15.7676C3.24865 15.7849 9.87772 15.8717 16.6977 13.824C17.0969 14.5875 17.4613 15.3684 17.8084 16.1493C17.6348 16.2014 17.4439 16.2535 17.2704 16.3055C10.2248 18.5788 6.47642 24.7914 6.16405 25.312C3.99485 22.8999 2.65863 19.6895 2.65863 16.1841ZM16.3333 29.8413C13.1749 29.8413 10.2595 28.7654 7.95147 26.9606C8.19442 26.4574 10.971 21.1125 18.676 18.4227C18.7107 18.4053 18.7281 18.4053 18.7628 18.388C20.689 23.3684 21.47 27.5506 21.6782 28.748C20.0296 29.4595 18.2248 29.8413 16.3333 29.8413ZM23.9515 27.4986C23.8127 26.6656 23.0838 22.6743 21.2964 17.7632C25.5828 17.0864 29.3311 18.1971 29.7997 18.3533C29.2097 22.1537 27.0231 25.4335 23.9515 27.4986Z"
+                  fill="currentColor"
+                />
+              </svg></span></a>
+           <a><b style="font-weight: bolder; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 32px;">GREEN<span class="text-success">TEA</span></b></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+            <ul class="navbar-nav nav-justified fs-4 nav-underline">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./form.html">Supplement</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#order">Order</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#products">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#gallery">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-success" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                      </svg>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-success" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-android2" viewBox="0 0 16 16">
+                        <path d="m10.213 1.471.691-1.26c.046-.083.03-.147-.048-.192-.085-.038-.15-.019-.195.058l-.7 1.27A4.832 4.832 0 0 0 8.005.941c-.688 0-1.34.135-1.956.404l-.7-1.27C5.303 0 5.239-.018 5.154.02c-.078.046-.094.11-.049.193l.691 1.259a4.25 4.25 0 0 0-1.673 1.476A3.697 3.697 0 0 0 3.5 5.02h9c0-.75-.208-1.44-.623-2.072a4.266 4.266 0 0 0-1.664-1.476ZM6.22 3.303a.367.367 0 0 1-.267.11.35.35 0 0 1-.263-.11.366.366 0 0 1-.107-.264.37.37 0 0 1 .107-.265.351.351 0 0 1 .263-.11c.103 0 .193.037.267.11a.36.36 0 0 1 .112.265.36.36 0 0 1-.112.264m4.101 0a.351.351 0 0 1-.262.11.366.366 0 0 1-.268-.11.358.358 0 0 1-.112-.264c0-.103.037-.191.112-.265a.367.367 0 0 1 .268-.11c.104 0 .19.037.262.11a.367.367 0 0 1 .107.265c0 .102-.035.19-.107.264M3.5 11.77c0 .294.104.544.311.75.208.204.46.307.76.307h.758l.01 2.182c0 .276.097.51.292.703a.961.961 0 0 0 .7.288.973.973 0 0 0 .71-.288.95.95 0 0 0 .292-.703v-2.182h1.343v2.182c0 .276.097.51.292.703a.972.972 0 0 0 .71.288.973.973 0 0 0 .71-.288.95.95 0 0 0 .292-.703v-2.182h.76c.291 0 .54-.103.749-.308.207-.205.311-.455.311-.75V5.365h-9v6.404Zm10.495-6.587a.983.983 0 0 0-.702.278.91.91 0 0 0-.293.685v4.063c0 .271.098.501.293.69a.97.97 0 0 0 .702.284c.28 0 .517-.095.712-.284a.924.924 0 0 0 .293-.69V6.146a.91.91 0 0 0-.293-.685.995.995 0 0 0-.712-.278m-12.702.283a.985.985 0 0 1 .712-.283c.273 0 .507.094.702.283a.913.913 0 0 1 .293.68v4.063a.932.932 0 0 1-.288.69.97.97 0 0 1-.707.284.986.986 0 0 1-.712-.284.924.924 0 0 1-.293-.69V6.146c0-.264.098-.491.293-.68Z"/>
+                      </svg>
+                </a>
+              </li>
+            </ul>
+            <form class="d-flex justify-content-center" role="search" action="#order">
+                <button class="btn btn-success" type="submit" style="border-radius: 40px;">Order Now</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Home -->
+      <div class="container-fluid bg-success-subtle" id="home">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 align-self-center ps-lg-5 ps-sm-1 pe-sm-1 ps-md-3">
+                <h1 class="fw-bolder" style="font-size: 3rem;">Super<span class="text-success"> Convenient</span></h1>
+                <h1 class="fw-bolder" style="font-size: 3rem;">Quality Face Creams</h1>
+                <p style="font-size: 20px;">Using a face cream helps seal in the moisture in facial skin. This daily practice enhances the skin's elasticity,
+                     keeping it soft and supple. High-quality face cream also helps reduce dryness and heal blemishes and other conditions that can affect facial skin.
+                </p>
+                <div>
+                <a href=""><button type="button" class="btn btn-success">Purchase</button></a>
+                <a href=""><button type="button" class="btn btn-outline-success">Contact</button></a> 
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 align-self-center text-center pe-lg-5 pe-sm-1 ps-sm-1 pe-md-3"  >
+                <img src="./hero.png" alt="img" class="w-75">
+            </div>
+        </div>
+      </div>
+      <!-- Home Ends -->
+
+
+      <!-- Products -->
+      <div id="products" class="pt-5">
+      <h1 class="text-center mt-5">OUR <span class="text-success">PRODUCTS</span></h1>
+      <div class="row m-5 me-5">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="card border-0 text-center">
+                <img src="./image1.avif" class="card-img-top h-50 w-50 align-self-center card--img"  alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Cleanse</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="card border-0 text-center" >
+                <img src="./image2.avif" class="card-img-top h-50 w-50 align-self-center card--img" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Mask</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="card border-0 text-center">
+                <img src="./image3.webp" class="card-img-top h-50 w-50 align-self-center card--img" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Treat</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="card border-0 text-center">
+                <img src="./image4.avif" class="card-img-top h-50 w-50 align-self-center card--img" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Moisturize</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+    <!-- Products Ends -->
+
+    <!-- How to use -->
+      <div class="container" style="margin-top:30px ;">
+        <div class="card mb-3 border-0" >
+          <div class="row g-4">
+            <div class="col-md-4 d-flex justify-content-center">
+              <iframe class="h-100 img-fluid rounded-start" src="https://www.youtube.com/embed/o7ppiK3A1YQ?si=WD8IdcDWcXBg4xMP&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3 class="card-title text-success">How to use</h3>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga, et quas! Id dolores corporis magni repudiandae iure error illum cum velit quas nostrum, nemo commodi nisi delectus dolorem! Fugiat, reiciendis.</p>
+                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- How to use Ends -->
+
+      <!-- Gallery -->
+      <div id="gallery" class="pt-5 pb-5  bg-success-subtle">
+      <h1 class="text-center mt-5">PRODUCT <span class="text-success">GALLERY</span></h1>
+      <div class="container" style="margin-top: 30px; margin-bottom: 50px;">
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col">
+                <div class="card text-bg-dark text-black">
+                  <img src="./green-tea-1.jpg" class="card-img" alt="...">
+                </div>
+               </div>
+               <div class="col">
+                  <div class="card text-bg-dark text-black">
+                    <img src="./green-tea-2.jpg" class="card-img" alt="...">
+                  </div>
+                </div>
+                <div class="col">
+                    <div class="card text-bg-dark">
+                      <img src="./green-tea-3.jpg" class="card-img" alt="...">
+                    </div>
+                    </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col">
+                <div class="card text-bg-dark">
+                  <img src="./green-tea-2.jpg" class="card-img" alt="...">
+                </div>
+               </div>
+               <div class="col">
+                  <div class="card text-bg-dark">
+                    <img src="./green-tea-3.jpg" class="card-img" alt="...">
+                  </div>
+                </div>
+                <div class="col">
+                    <div class="card text-bg-dark">
+                      <img src="./green-tea-1.jpg" class="card-img" alt="...">
+                    </div>
+                    </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col">
+                <div class="card text-bg-dark">
+                  <img src="./green-tea-3.jpg" class="card-img" alt="...">
+                </div>
+               </div>
+               <div class="col">
+                  <div class="card text-bg-dark">
+                    <img src="./green-tea-1.jpg" class="card-img" alt="...">
+                  </div>
+                </div>
+                <div class="col">
+                    <div class="card text-bg-dark">
+                      <img src="./green-tea-2.jpg" class="card-img" alt="...">
+                    </div>
+                    </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <div class="m-3 text-end">
+          <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGallery" aria-expanded="false" aria-controls="collapseGallery">
+          View more
+          </button>
+        </div>
+        <div class="collapse" id="collapseGallery">
+          <div class="card card-body bg-success-subtle border-0">
+            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row-cols-sm-2 g-4">
+              <div class="col h-100"><img src="./green-tea-1.jpg" class="img-fluid" alt="..."></div>
+              <div class="col h-100"><img src="./green-tea-2.jpg" class="img-fluid" alt="..."></div>
+              <div class="col h-100"><img src="./green-tea-3.jpg" class="img-fluid" alt="..."></div>
+              <div class="col h-100"><img src="./green-tea-4.jpg" class="img-fluid" alt="..."></div>
+              <div class="col h-100"><img src="./green-tea-5.jpg" class="img-fluid" alt="..."></div>
+              <div class="col h-100"><img src="./green-tea-6.jpg" class="img-fluid" alt="..."></div>
+              <div class="col h-100"><img src="./green-tea-7.png" class="img-fluid" alt="..."></div>
+              <div class="col h-100"><img src="./green-tea-1.jpg" class="img-fluid" alt="..."></div>
+              <div class="col h-100"><img src="./green-tea-2.jpg" class="img-fluid" alt="..."></div>
+              <div class="col h-100"><img src="./green-tea-3.jpg" class="img-fluid" alt="..."></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- Gallery Ends -->
+
+    <!-- Explore Products -->
+    <div id="order" class="pt-5">
+      <h1 class="text-center mt-5">EXPLORE OUR <span class="text-success">PRODUCTS</span></h1>
+      <div class="container mb-5">
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 row-cols-sm-2">
+          <div class="col">
+            <div class="card h-100 shadow-lg rounded-bottom-4 card--hover">
+              <img src="./green-tea-1.jpg" class="card-img-top" alt="...">
+              <div class="card-body row">
+                <h5 class="card-title col-9 m-auto">Product 1 <br> Price: 80$</h5>
+                <div class="col-3 d-flex justify-content-center align-items-center text-success">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart4 cart--hover" viewBox="0 0 16 16">
+                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 shadow-lg rounded-bottom-4 card--hover">
+              <img src="./green-tea-2.jpg" class="card-img-top" alt="...">
+              <div class="card-body row">
+                <h5 class="card-title col-9 m-auto">Product 2 <br> Price: 60$</h5>
+                <div class="col-3 d-flex justify-content-center align-items-center text-success">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart4 cart--hover" viewBox="0 0 16 16">
+                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 shadow-lg rounded-bottom-4 card--hover">
+              <img src="./green-tea-3.jpg" class="card-img-top" alt="...">
+              <div class="card-body row">
+                <h5 class="card-title col-9 m-auto">Product 3 <br> Price: 100$</h5>
+                <div class="col-3 d-flex justify-content-center align-items-center text-success">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart4 cart--hover" viewBox="0 0 16 16">
+                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 shadow-lg rounded-bottom-4 card--hover">
+              <img src="./green-tea-5.jpg" class="card-img-top" alt="...">
+              <div class="card-body row">
+                <h5 class="card-title col-9 m-auto">Product 4 <br> Price: 70$</h5>
+                <div class="col-3 d-flex justify-content-center align-items-center text-success">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart4 cart--hover" viewBox="0 0 16 16">
+                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 shadow-lg rounded-bottom-4 card--hover">
+              <img src="./green-tea-4.jpg" class="card-img-top" alt="...">
+              <div class="card-body row">
+                <h5 class="card-title col-9 m-auto">Product 5 <br> Price: 90$</h5>
+                <div class="col-3 d-flex justify-content-center align-items-center text-success">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart4 cart--hover" viewBox="0 0 16 16">
+                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 shadow-lg rounded-bottom-4 card--hover">
+              <img src="./green-tea-6.jpg" class="card-img-top" alt="...">
+              <div class="card-body row">
+                <h5 class="card-title col-9 m-auto">Product 6 <br> Price: 80$</h5>
+                <div class="col-3 d-flex justify-content-center align-items-center text-success">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart4 cart--hover" viewBox="0 0 16 16">
+                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 shadow-lg rounded-bottom-4 card--hover">
+              <img src="./green-tea-7.png" class="card-img-top" alt="...">
+              <div class="card-body row">
+                <h5 class="card-title col-9 m-auto">Product 7 <br> Price: 60$</h5>
+                <div class="col-3 d-flex justify-content-center align-items-center text-success">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart4 cart--hover" viewBox="0 0 16 16">
+                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 shadow-lg rounded-bottom-4 card--hover">
+              <img src="./green-tea-3.jpg" class="card-img-top" alt="...">
+              <div class="card-body row pe-4 ps-4">
+                <h5 class="card-title col-9">Product 8 <br> Price: 100$</h5>
+                  <div class="col-3 d-flex justify-content-center align-items-center text-success">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart4 cart--hover" viewBox="0 0 16 16">
+                      <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+                    </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 shadow-lg rounded-bottom-4 card--hover">
+              <img src="./green-tea-5.jpg" class="card-img-top" alt="...">
+              <div class="card-body row">
+                <h5 class="card-title col-9 m-auto">Product 9 <br> Price: 70$</h5>
+                  <div class="col-3 d-flex justify-content-center align-items-center text-success">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart4 cart--hover" viewBox="0 0 16 16">
+                      <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+                    </svg>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- Explore Product Ends -->
+
+
+    <!-- Faq -->
+    <div class="container m-5">
+      <h1 class="mt-5 text-center">FA<span class="text-success">Qs</span></h1>
+      <div class="accordion fs-5" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+              How long should this face cream last?
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+            <div class="accordion-body">
+              <strong>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</strong> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet officia commodi molestiae exercitationem, odio eaque rem ut. Quo, eius placeat recusandae perferendis ex quasi, laboriosam harum tempora in reprehenderit magni.
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde sapiente rerum amet neque sequi minus odit architecto aut, ipsam numquam molestiae commodi sit possimus veniam labore. Optio quis consequatur odit?
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae tempora repellendus eos explicabo unde! Unde, blanditiis obcaecati? Molestiae doloremque quae consequatur esse, dolore ea sunt, repellendus hic inventore, enim libero.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+              Can I use face cream everyday?
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+              What should I do about dark spots?
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <strong>A: Avoiding the sun and wearing sunscreen can prevent dark spots</strong> UV exposure and hormonal changes are two causes of dark spots. Avoiding the sun and wearing sunscreen can prevent new dark spots from forming, while exfoliating regularly or using prescription medications may help treat the existing spots you already have. Certain dark spot correctors or moisturizers may also make a difference over time. Remember to choose the products that are formulated for your skin type.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+              More Questions!
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                      Do you need to moisturize oily skin?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Yes, you need to moisturize your skin even if you have oily skin. You use a moisturizer to improve your skin’s texture and to hydrate your skin. If you have oily skin, you can use an oil-free moisturizer to avoid greasy and shiny looking skin.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                      Should you apply a moisturizer before or after sunscreen?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Moisturizers should be applied on moist, damp skin so ideally after a bath when the body is still wet, capturing the moisture inside the skin. Sunscreen should be applied after the moisturizer. Some moisturizers come with SPF, but you will most likely need higher sun protection than most that only includes SPF 15. </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                      What kind of moisturizer should people use that have dehydrated skin?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Dry skin needs more moisturizer that can healthily grease the surface. It is best to opt for a hypoallergenic and fragrance-free formula, so it doesn’t irritate the skin any further. Depending on the area of the body you are targeting, various moisturizers deliver relief without causing further damage. Some Remedy products contain a blend of olive-based antioxidants that target damaged cells and quickly work to relieve itchy and reddened skin. </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Faq Ends -->
+
+
+  </div>
+  <!-- container Ends -->
+
+  <!-- Footer -->
+    <footer class="container-fluid bg-secondary-subtle mt-5">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-4">
+          <div class="col">
+            <h4>About Us</h4>
+            <p class="text-success-emphasis">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus ullam repellat consequuntur,
+              perferendis iure eos dolore quia dolor minima modi reprehenderit delectus ad deserunt,
+              voluptatem perspiciatis laboriosam minus quam expedita?</p>
+            <div>
+              <ul class="list-inline list-unstyled">
+                <li class="list-inline-item text-primary">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                  </svg>
+                </li>
+                <li class="list-inline-item text-black">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                    <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+                  </svg>
+                </li>
+                <li class="list-inline-item text-primary-emphasis">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401m-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4"/>
+                  </svg>
+                </li>
+                <li class="list-inline-item text-danger">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                  </svg>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col text-lg-center">
+            <h4>Quik Links</h4>
+            <ul class="list-group">
+              <li class="list-group-item bg-secondary-subtle border-0"><a href="#" class="text-decoration-none text-success-emphasis">Home</a></li>
+              <li class="list-group-item bg-secondary-subtle border-0"><a href="#" class="text-decoration-none text-success-emphasis">Contact</a></li>
+              <li class="list-group-item bg-secondary-subtle border-0"><a href="#" class="text-decoration-none text-success-emphasis">Suppliment</a></li>
+              <li class="list-group-item bg-secondary-subtle border-0"><a href="#" class="text-decoration-none text-success-emphasis">Order</a></li>
+              <li class="list-group-item bg-secondary-subtle border-0"><a href="#" class="text-decoration-none text-success-emphasis">Gallery</a></li>
+            </ul>
+          </div>
+          <div class="col ps-lg-5">
+            <h4>Contact Us</h4>
+            <ul class="list-group">
+              <li class="list-group-item bg-secondary-subtle border-0">
+                <p class="row g-0">
+                  <span class="col-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                    <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                  </svg></span>
+                  <span class="col-11 text-success-emphasis">Phone : <br>+91 9847366549</span>
+              </p>
+              </li>
+              <li class="list-group-item bg-secondary-subtle border-0">
+                <p class="row g-0">
+                  <span class="col-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                      <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                    </svg></span>
+                  <span class="col-11 text-success-emphasis">Email : <br> <a href="mailto:greentea@gmail.com" class="text-decoration-none text-success-emphasis">greentea@gmail.com</a></span>
+              </p>
+              </li>
+              <li class="list-group-item bg-secondary-subtle border-0">
+                <p class="row g-0">
+                  <span class="col-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                      <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                      <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                    </svg>
+                  </span>
+                  <span class="col-11 text-success-emphasis">Address : <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, quos.</span>
+              </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+</body>
+</html>
