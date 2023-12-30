@@ -32,6 +32,7 @@
       .cart--hover:hover{
         transform: scale(1.05);
         opacity: 0.5;
+        transform: translate();
       }
     </style>
 </head>
@@ -56,7 +57,7 @@
 
 
     <!-- Second Navbar -->
-    <nav class="navbar sticky-top bg-body-tertiary navbar-expand-lg pe-lg-5 ps-lg-5 ps-md-5 ps-md-5 pt-3 pb-3">
+    <nav class="navbar sticky-top bg-body-tertiary navbar-expand-lg pe-lg-5 ps-lg-5 ps-md-5 ps-md-5 pt-3 pb-3" id="navbar-two">
         <div class="container-fluid">
           <a class="navbar-brand text-black">
             <span class="text-success"><svg
@@ -95,7 +96,7 @@
                 <a class="nav-link" href="#gallery">Gallery</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="#footers">Contact</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-success" href="#">
@@ -112,13 +113,45 @@
                 </a>
               </li>
             </ul>
-            <form class="d-flex justify-content-center" role="search" action="#order">
-                <button class="btn btn-success" type="submit" style="border-radius: 40px;">Order Now</button>
+            <form class="d-flex justify-content-center">
+                <button class="btn btn-success" type="button" style="border-radius: 40px;" data-bs-toggle="modal" data-bs-target="#login-model">Order Now</button>
             </form>
           </div>
         </div>
       </nav>
-
+      <div class="modal fade" id="login-model" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <a href="register.php"><button type="button" class="btn btn-primary">Sign in</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-bs-spy="scroll" data-bs-target="#navbar-two" data-bs-offset="0" class="scrollspy-example" tabindex="0">
       <!-- Home -->
       <div class="container-fluid bg-success-subtle" id="home">
         <div class="row">
@@ -429,7 +462,24 @@
       </div>
     </div>
 <!-- Explore Product Ends -->
-
+<!-- Tags -->
+    <div class="container m-5">
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
+          <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
+          <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+          <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem ut doloremque adipisci expedita quis fugiat laboriosam dolores natus earum similique id blanditiis, iure rem, temporibus nostrum obcaecati vero culpa. Ducimus.</div>
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere nobis ex reprehenderit totam expedita animi laboriosam, illum excepturi unde tempore est molestias ratione quia cumque repellendus quas optio ad earum!</div>
+        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, ipsa in itaque qui error tempora quisquam repudiandae voluptate dolore minus cupiditate dolor fugiat enim nulla nesciunt pariatur quam nemo corporis.</div>
+        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, suscipit ullam quos natus voluptas eum tenetur sint necessitatibus architecto. Reprehenderit modi saepe pariatur delectus non corrupti reiciendis voluptatum est laborum.</div>
+      </div>
+    </div>
+<!-- Tags Ends -->
 
     <!-- Faq -->
     <div class="container m-5">
@@ -520,12 +570,13 @@
     </div>
     <!-- Faq Ends -->
 
+  </div>
 
   </div>
   <!-- container Ends -->
 
   <!-- Footer -->
-    <footer class="container-fluid bg-secondary-subtle mt-5">
+    <footer class="container-fluid bg-secondary-subtle mt-5" id="footers">
       <div class="container">
         <div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-4">
           <div class="col">
